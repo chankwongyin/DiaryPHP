@@ -22,33 +22,37 @@
                 <hr>
             </div>
         </div>
-        <div class="row" id="diaryPage">
-            <div class="col">
-                <?php include "./View/diaryPage.php"?>
-            </div>
-        </div>
         <div class="row" id="loginPage">
         <div class="col-4"></div>
-            <div class="col-4">
+            <div class="col-4 form">
                 <?php include "./View/loginPage.php"?>
+                <button type="button" class="btn btn-dark">Switch to Sign Up</button>
             </div>
             <div class="col-4"></div>
         </div>
+        <div class="row" id="signupPage">
+            <div class="col-4"></div>
+            <div class="col-4 form">
+                <?php include "./View/signupPage.php"?>
+                <button type="button" class="btn btn-dark">Switch to Log In</button>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <!-- <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-dark">Switch to </button>
+            </div>
+        </div> -->
+
+
         <div class="row" id="logoutPage">
             <div class="col">
                 <?php include "./View/logoutPage.php"?>
             </div>
         </div>
-        <div class="row" id="signupPage">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <?php include "./View/signupPage.php"?>
-            </div>
-            <div class="col-4"></div>
-        </div>
-        <div class="row">
+        <div class="row" id="diaryPage">
             <div class="col">
-                <button type="button" class="btn btn-dark">Switch to</button>
+                <?php include "./View/diaryPage.php"?>
             </div>
         </div>
     </div>
