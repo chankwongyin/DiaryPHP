@@ -26,11 +26,13 @@
             <div class="col">
                 <?php include "./View/diaryPage.php"?>
             </div>
-            </div>
+        </div>
         <div class="row" id="loginPage">
-            <div class="col">
+        <div class="col-4"></div>
+            <div class="col-4">
                 <?php include "./View/loginPage.php"?>
             </div>
+            <div class="col-4"></div>
         </div>
         <div class="row" id="logoutPage">
             <div class="col">
@@ -38,9 +40,11 @@
             </div>
         </div>
         <div class="row" id="signupPage">
-            <div class="col">
+            <div class="col-4"></div>
+            <div class="col-4">
                 <?php include "./View/signupPage.php"?>
             </div>
+            <div class="col-4"></div>
         </div>
         <div class="row">
             <div class="col">
