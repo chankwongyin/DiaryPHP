@@ -31,7 +31,7 @@ class Diary
     }
     public function printDiary()
     {
-        $str = "title: " . $this->getTitle() . "<br>";
+        $str = "title: " . $this->getTitle() . ",";
         $str .= "content: " . $this->getContent() . "<br>";
         return $str;
     }

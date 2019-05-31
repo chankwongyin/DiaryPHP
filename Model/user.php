@@ -1,5 +1,5 @@
 <?php
-
+include "diary.php";
 class User
 {
     private $id;
@@ -44,7 +44,26 @@ class User
         $str = "id: " . $this->getID() . "<br>";
         $str .= "email: " . $this->getEmail() . "<br>";
         $str .= "password: " . $this->getPassword() . "<br>";
-        $str .= "diary: " . $this->getDiary()->printDiary() . "<br>";
+        $str .= "diary: " . $this->printDiary() . "<br>";
         return $str;
+    }
+    public function __construct($id, $email, $password)
+    {
+        $this->id = $id;
+        $this->email = $email;
+        $this->password = $password;
+        $this->diary = array();
+    }
+    public function addDiary($title, $content)
+    {
+        $new_diary = new Diary($title, $content);
+        array_push($this->diary, $new_diary);
+    }
+    public function printDiary()
+    {
+        $str = "";
+        foreach ($this->getDiary() as $value) {
+            $str .= $value->printDiary();
+        }
     }
 }
