@@ -1,4 +1,4 @@
-<form>
+<form action="../Controller/loginController.php" method="POST">
     <div class="form-group">
         <label for="email">Email address:</label>
         <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"

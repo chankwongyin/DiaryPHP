@@ -6,7 +6,21 @@ function signUpUser($connect, $id, $email, $password)
     $result = mysqli_query($connect, $query);
 
 }
-
+function logInUser($connect, $email, $password)
+{
+    //check if email exists
+    if (!isEmailExist($connect, $email)) {
+        return false;
+    } else {
+        $query = "SELECT password FROM users WHERE email=\"" . $email . "\"";
+        $result = mysqli_query($connect, $query);
+        while ($row = $result->fetch_assoc()) {
+            if (password_verify($password, $row["password"])) {
+                return true;
+            }
+        }
+    }
+}
 function insertDiary()
 {
 
