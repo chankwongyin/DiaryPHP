@@ -1,17 +1,17 @@
 <?php
 
-include "../Model/diary.php"
+include "../Model/diary.php";
 
 $title = "test title";
-$content ="test content";
+$content = "test content";
 
-$diary = new Diary($title,$content);
+$diary = new Diary($title, $content);
 
-if($diary->getTitle() != $title){
+if ($diary->getTitle() != $title) {
     echo "getTitle() error";
 }
 
-if($diary->getContent() != $content){
+if ($diary->getContent() != $content) {
     echo "getContent() error";
 }
 
@@ -30,5 +30,3 @@ if ($diary->getContent() != $newContent) {
 }
 
 echo $diary->printDiary();
-
-?>

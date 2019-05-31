@@ -21,7 +21,7 @@ class User
     }
     public function getDiary()
     {
-        return $diary;
+        return $this->diary;
     }
     public function setID($id)
     {

@@ -7,12 +7,12 @@ class Diary
 
     public function getTitle()
     {
-        return $title;
+        return $this->title;
     }
 
     public function getContent()
     {
-        return $content;
+        return $this->content;
     }
 
     public function setContent($content)
@@ -31,8 +31,8 @@ class Diary
     }
     public function printDiary()
     {
-        $str = "title: " . $this->getTitle() . ",";
-        $str .= "content: " . $this->getContent() . "<br>";
+        $str = "title: " . $this->getTitle() . "<br>";
+        $str .= "content: " . $this->getContent() . "<br><br>";
         return $str;
     }
 }
