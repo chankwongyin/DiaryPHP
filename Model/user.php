@@ -44,7 +44,7 @@ class User
         $str = "id: " . $this->getID() . "<br>";
         $str .= "email: " . $this->getEmail() . "<br>";
         $str .= "password: " . $this->getPassword() . "<br>";
-        $str .= "diary: " . $this->printDiary() . "<br>";
+        $str .= "diary: <br>" . $this->printDiary() . "<br>";
         return $str;
     }
     public function __construct($id, $email, $password)
@@ -65,5 +65,6 @@ class User
         foreach ($this->getDiary() as $value) {
             $str .= $value->printDiary();
         }
+        return $str;
     }
 }
