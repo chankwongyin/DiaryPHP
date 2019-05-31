@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include "database.php";
 include "queryController.php";
@@ -24,7 +25,8 @@ if (!isset($_POST["signup"])) {
         $user = new User($user_id, $email, $password);
 
         //insert the data to DB
-        signUpUser($connect, $user_id, $email, $password);
+        $_SESSION["id"] = signUpUser($connect, $user_id, $email, $password);
+
     }
 
 }

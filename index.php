@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION["id"]) || isset($_COOKIE["id"])) {
+    echo "<script>document.getElementById(\"logoutPage\").style.display=\"block\";</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +19,11 @@
 
 <body>
     <div class="container">
+        <div class="row" id="logoutPage">
+            <div class="col">
+                <?php include "./View/logoutPage.php"?>
+            </div>
+        </div>
         <div class="row">
             <div class="col">
                 <header>
@@ -23,7 +34,7 @@
             </div>
         </div>
         <div class="row" id="loginPage">
-        <div class="col-4"></div>
+            <div class="col-4"></div>
             <div class="col-4 form">
                 <?php include "./View/loginPage.php"?>
                 <button type="button" class="btn btn-dark">Switch to Sign Up</button>
@@ -44,12 +55,6 @@
             </div>
         </div> -->
 
-
-        <div class="row" id="logoutPage">
-            <div class="col">
-                <?php include "./View/logoutPage.php"?>
-            </div>
-        </div>
         <div class="row" id="diaryPage">
             <div class="col">
                 <?php include "./View/diaryPage.php"?>

@@ -4,7 +4,7 @@ function signUpUser($connect, $id, $email, $password)
 {
     $query = "INSERT INTO users (id, email, password) VALUES (\"" . $id . "\", \"" . $email . "\", \"" . $password . "\")";
     $result = mysqli_query($connect, $query);
-
+    return $id;
 }
 function logInUser($connect, $email, $password)
 {
@@ -35,9 +35,16 @@ function isEmailExist($connect, $email)
     } else {
         return false;
     }
+}
+function getUserId($connect, $email)
+{
+    $query = "SELECT id FROM users WHERE email=\"" . $email . "\"";
+    $result = mysqli_query($connect, $query);
+    while ($row = $result->fetch_assoc()) {
+        return $row["id"];
+    }
 
 }
-
 function userCount($connect)
 {
     $query = "SELECT id From users";
