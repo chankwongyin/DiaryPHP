@@ -49,12 +49,6 @@ if (isset($_SESSION["id"]) || isset($_COOKIE["id"])) {
             </div>
             <div class="col-4"></div>
         </div>
-        <!-- <div class="row">
-            <div class="col">
-                <button type="button" class="btn btn-dark">Switch to </button>
-            </div>
-        </div> -->
-
         <div class="row" id="diaryPage">
             <div class="col">
                 <?php include "./View/diaryPage.php"?>
