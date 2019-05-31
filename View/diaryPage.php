@@ -20,3 +20,24 @@
         </div>
     </div>
 </div>
+
+
+<hr>
+<div class="row diary">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <form>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" placeholder="Title" name="title">
+            </div>
+
+            <div class="form-group">
+                <label for="content">Content:</label>
+                <textarea class="form-control" id="content" rows="6" name="content"></textarea>
+            </div>
+            <button type="submit" class="btn btn-info" name="add">Add</button>
+        </form>
+    </div>
+    <div class="col-2"></div>
+</div>

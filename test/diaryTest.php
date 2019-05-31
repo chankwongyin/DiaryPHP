@@ -5,7 +5,7 @@ include "../Model/diary.php";
 $title = "test title";
 $content = "test content";
 
-$diary = new Diary($title, $content);
+$diary = new Diary('1', $title, $content);
 
 if ($diary->getTitle() != $title) {
     echo "getTitle() error";

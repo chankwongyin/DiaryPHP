@@ -1,9 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION["id"]) || isset($_COOKIE["id"])) {
-    echo "<script>document.getElementById(\"logoutPage\").style.display=\"block\";</script>";
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +31,7 @@ if (isset($_SESSION["id"]) || isset($_COOKIE["id"])) {
             <div class="col-4"></div>
             <div class="col-4 form">
                 <?php include "./View/loginPage.php"?>
-                <button type="button" class="btn btn-dark">Switch to Sign Up</button>
+                <button type="button" class="btn btn-dark" onclick="toSignUpPage()">Switch to Sign Up</button>
             </div>
             <div class="col-4"></div>
         </div>
@@ -45,16 +39,46 @@ if (isset($_SESSION["id"]) || isset($_COOKIE["id"])) {
             <div class="col-4"></div>
             <div class="col-4 form">
                 <?php include "./View/signupPage.php"?>
-                <button type="button" class="btn btn-dark">Switch to Log In</button>
+                <button type="button" class="btn btn-dark" onclick="toLogInPage()">Switch to Log In</button>
             </div>
             <div class="col-4"></div>
         </div>
         <div class="row" id="diaryPage">
             <div class="col">
-                <?php include "./View/diaryPage.php"?>
+                <!-- <?php include "./View/diaryPage.php"?> -->
+
             </div>
         </div>
     </div>
+
+    <script>
+    function toSignUpPage() {
+        document.getElementByID("#loginPage").style.display = "none";
+        document.getElementByID("#signupPage").style.display = "block";
+
+    }
+
+    function toLogInPage() {
+        document.getElementByID("#signupPage").style.display = "none";
+        document.getElementByID("#loginPage").style.display = "block";
+        // $("#loginPage").show();
+        // $("#signupPage").hide();
+    }
+    function ajax(){
+     var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            }
+        };
+        xmlhttp.open("GET", "./Controller/loginController.php?email=test%40test.com&password=123456&login=", true);
+        xmlhttp.send();
+    }
+    </script>
+
+    <script src="./js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    </script>
 </body>
 
 </html>

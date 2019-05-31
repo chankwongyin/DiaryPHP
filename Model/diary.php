@@ -4,6 +4,7 @@ class Diary
 {
     private $title;
     private $content;
+    private $id;
 
     public function getTitle()
     {
@@ -24,10 +25,11 @@ class Diary
         $this->title = $title;
     }
 
-    public function __construct($title = "", $content = "")
+    public function __construct($id, $title = "", $content = "")
     {
         $this->title = $title;
         $this->content = $content;
+        $this->id = $id;
     }
     public function printDiary()
     {

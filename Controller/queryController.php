@@ -45,6 +45,21 @@ function getUserId($connect, $email)
     }
 
 }
+
+function getDiary($connect, $id)
+{
+    $titles = array();
+    $contents = array();
+    $query = "SELECT title, content FROM diarys WHERE id=\"" . $id . "\"";
+    $result = mysqli_query($connect, $query);
+
+    while ($row = $result->fetch_assoc()) {
+        array_push($titles, $row["title"]);
+        array_push($contents, $row["content"]);
+    }
+    return array("titles" => $titles, "contents" => $contents);
+}
+
 function userCount($connect)
 {
     $query = "SELECT id From users";
